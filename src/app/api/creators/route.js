@@ -1,5 +1,5 @@
 import ConnectDB from "@/helper/db";
-import { Customer } from "@/models/customer";
+import { Creator } from "@/models/creator";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs"
 
@@ -9,22 +9,25 @@ ConnectDB();
 //API to Create a User
 export async function POST(request){
     const {name,email,password,gender,DOB} = await request.json();
-    const newCustomer = new Customer({
-        name,email,password,gender,DOB
+    const newCreator = new Creator({
+        name,email,password,gender,DOB,profilePicture:""
     });
-    newCustomer.profilePicture = "";
-    newCustomer.following = [];
-    newCustomer.orders = [];
-    
+    newCreator.about = "";
+    newCreator.socials = {
+        facebook:"",
+        youtube:"",
+        x:"",
+        other:""
+    }
     //<<<<<<<<<<<<<<<<Profile Picture is manually Sending..... It needs to be updated after an account,..
     //meanwhile show default avatars>>>>>>>>>>>>>>>>>>>>
 
-    newCustomer.password = bcrypt.hashSync(newCustomer.password,parseInt(process.env.BCRYPT_SALT));
+    newCreator.password = bcrypt.hashSync(newCreator.password,parseInt(process.env.BCRYPT_SALT));
 
     try{
-        newCustomer.save();
-        const response = NextResponse.json(newCustomer,{            //<REMOVE no need to return : Before Deployment>
-            message:"User Created Successfully",
+        newCreator.save();
+        const response = NextResponse.json(newCreator,{            //<REMOVE no need to return : Before Deployment>
+            message:"Account Created Successfully",
             success:true,
             status:201
         })

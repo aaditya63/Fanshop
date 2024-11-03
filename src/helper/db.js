@@ -5,6 +5,9 @@ const config = {
 }
 export default async function ConnectDB() {
     try{
+        if(config.isConnected == 1){
+            return;
+        }
         const {connection} = await mongoose.connect(process.env.MONGO_DB_URL,{
             dbName:"fanshop"
         })
