@@ -28,8 +28,7 @@ const customerSchema = new Schema({
         name: String,
         userid:String,
         profilePicture:String
-    }],
-    orders:[String]
+    }]
 })
 
 export const Customer = mongoose.models.customer || mongoose.model("customer",customerSchema)

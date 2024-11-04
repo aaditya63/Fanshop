@@ -57,3 +57,6 @@ export async function DELETE(request,{params}){
         return response;
     }
 }
+
+
+//API to Validate Discounts

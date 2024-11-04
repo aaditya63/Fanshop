@@ -27,16 +27,19 @@ const orderSchema = new Schema({
     price:{
         type:Number
     },
-    discount:[{
+    discount:{
         code:String,
         value:Number
-    }],
+    },
+    discountedPrice:{
+        type:Number
+    },
     productPicture:{
         type:String
     },
     orderStatus:{
         type:String,
-        enum:['pending','complete','rejected'],
+        enum:['pending','complete','cancelled','rejected'],
         default:"pending"
     }
 })

@@ -29,8 +29,7 @@ const productSchema = new Schema({
     },
     productPicture:{
         type:String
-    },
-    orders:[String]
+    }
 })
 
 export const Product = mongoose.models.product || mongoose.model("product",productSchema)
