@@ -13,7 +13,6 @@ export async function POST(request){
         name,email,password,gender,DOB
     });
     newCustomer.profilePicture = "";
-    newCustomer.following = [];    
     //<<<<<<<<<<<<<<<<Profile Picture is manually Sending..... It needs to be updated after an account,..
     //meanwhile show default avatars>>>>>>>>>>>>>>>>>>>>
 

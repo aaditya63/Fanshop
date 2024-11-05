@@ -23,12 +23,7 @@ const customerSchema = new Schema({
     DOB:Date,
     profilePicture:{
         type:String
-    },
-    following:[{
-        name: String,
-        userid:String,
-        profilePicture:String
-    }]
+    }
 })
 
 export const Customer = mongoose.models.customer || mongoose.model("customer",customerSchema)

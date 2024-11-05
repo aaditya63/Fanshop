@@ -2,7 +2,6 @@ import ConnectDB from "@/helper/db";
 import { Creator } from "@/models/creator";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs"
-
 ConnectDB();
 
 
