@@ -2,22 +2,38 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-      <nav>
-        <div>
+    <div className="">
+
+      <div className="md:hidden flex justify-center items-center mt-3">
+        <Image src="/images/logo.png" alt="LOGO image" width={220} height={0}/>
+      </div>
+      <div className="flex justify-around md:justify-around items-center pl-2 pr-2 md:pl-10 md:pr-10 lg:pl-16 lg:pr-16">
+        <div className="hidden md:block">
           <Image src="/images/logo.png" alt="Example image" width={130} height={50} />
         </div>
-        <div>
-          <input type="text" placeholder="Find Your Favorite Store" />
-          <Image id="search_box" src="/images/search_icon.svg" alt="Example image" width={130} height={50} />
+        <div className="flex">
+          <input className="w-72 col-span-8 md:w-96 h-10 mt-2 mb-2 p-2 bg-slate-200 rounded-tl-md rounded-bl-md" type="text" placeholder="Find Your Favorite Store" />
+          <Image className="col-span-2 bg-slate-200 h-10 mt-2 mb-2 rounded-tr-md rounded-br-md " id="search_box" src="/images/search_icon.svg" alt="Example image" width={30} height={30} />
         </div>
-        <div>
-        <Image id="search_box" src="/images/cart.svg" alt="Example image" width={50} height={50} />
+        <div className="hidden sm:block">
+        <div className="flex">
+          <p className="text-2xl">0</p>
+          <Image src="/images/cart.svg" alt="Example image" width={35} height={35} />
         </div>
-        <div>
-        Login & Signup
         </div>
-      </nav>
+        <div className="hidden lg:block cursor-pointer  border-black border hover:bg-gray-300 hover:border-none p-2 rounded">
+          Become a Seller
+        </div>
+        <div className="hidden lg:block cursor-pointer  border-black border hover:bg-gray-300 hover:border-none p-2 rounded">
+          Login & Signup
+        </div>
+        <div className="cursor-pointer  border-black border rounded  hover:bg-gray-300">
+          <Image src="/images/hamburger.svg" alt="Example image" width={35} height={35} />
+        </div>
+      </div>
     </div>
+
+
+
   );
 }
