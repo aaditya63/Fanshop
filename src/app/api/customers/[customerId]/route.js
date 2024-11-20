@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 ConnectDB();
 
-//API is to Uddate User Profile
+//API is to Update User Profile
 export async function PUT(request,{params}){
     const {customerId} = params
     const {name,email,password,gender,DOB,profilePicture} = await request.json();
